@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. Of. Openings</th>
+      <th>Apply Before</th>
+      <th>Job Notes</th>
+      <th>Code</th>
+      <th>Start Date</th>
+      <th>Job Title</th>
+      <th>Experience Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobs" (click)="viewDetails(job.id)">
+      <td>{{ job.number_of_openings }}</td>
+      <td>{{ job.job_close_date }}</td>
+      <td>{{ job.job_notes }}</td>
+      <td>{{ job.job_number }}</td>
+      <td>{{ job.job_start_date }}</td>
+      <td>{{ job.job_title }}</td>
+      <td>{{ job.experience_required }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div (click)="createNewJob()" class="d-flex align-items-end justify-content-center" style="height: 100%; text-align: center;">
+  <button class="btn btn-primary">Create A New Job</button>
+</div>
